@@ -6,20 +6,20 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:26:40 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:16:24 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 16:49:39 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(char *str, char c)
+char	*ft_strchr(char *str, char c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-    {
-        if (c == str[i])
-            return (&str[i]);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (c == str[i])
+			return (&str[i]);
+		i++;
+	}
+	return (0);
 }

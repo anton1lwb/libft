@@ -6,32 +6,23 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 18:10:59 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:25:16 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:52:42 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void *calloc( size_t elementCount, size_t elementSize)
+void	*ft_calloc( size_t elementCount, size_t elementSize)
 {
-    int i;
-    int j;
-    int test;
+	size_t			i;
+	unsigned char	*tab;
 
-    i = 0;
-    j = 0;
-    test = malloc(sizeof(int) * (elementCount * elementSize));
-    while (i < elementCount)
-    {
-        if (j < elementSize)
-        {
-            test[i][j] = '\0';
-            j++;
-        }
-        else
-        {
-            j = 0;
-            i++;
-        }
-    }
+	i = 0;
+	tab = malloc(sizeof(unsigned char *) * (elementCount * elementSize));
+	while (i < elementCount)
+	{
+		ft_bzero(tab, elementSize);
+		i++;
+	}
+	return ((void *)tab);
 }

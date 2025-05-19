@@ -6,23 +6,22 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:45:44 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:16:47 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:39:00 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_strncmp(char *s1, char *s2, int size)
+int	ft_strncmp(char *s1, char *s2, int size)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!s1[i] || !s2[i])
-	    return (-1);
-    while(s1[i] && i <= size)
-    {
-	if (s1[i] != s2[i])	
-	    return(s1[i] - s2[i]);
-	i++;
-    }
-    return (0);
+	i = 0;
+	if (!s1[i] || !s2[i])
+		return (-1);
+	while (s1[i] && i <= size)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }

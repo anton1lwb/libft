@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/15 08:59:02 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/19 12:41:37 by anlowenb         ###   ########.fr       */
+/*   Created: 2025/05/19 14:25:48 by anlowenb          #+#    #+#             */
+/*   Updated: 2025/05/19 14:34:38 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *srch, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	len_n;
-	size_t	i;
-	size_t	j;
-
-	if (!str || !srch)
-		return (NULL);
-	if (ft_strlen(srch) == 0)
-		return ((char *) str);
-	len_n = ft_strlen(srch);
-	i = 0;
-	while (str[i] && i < len)
+	while (*s)
 	{
-		j = 0;
-		while (str[i + j] && str[i + j] == srch[j] && i + j < len)
-			j++;
-		if (j == len_n)
-			return ((char *) str + i);
-		i++;
+		write(fd, s, 1);
+		s++;
 	}
-	return (NULL);
+	write(fd, "\n", 1);
 }
+
+// int main(void)
+// {
+// 	char *test = "test";
+// 	ft_putendl_fd(test, 1);
+// }

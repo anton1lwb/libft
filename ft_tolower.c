@@ -6,13 +6,13 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:44:44 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:17:11 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:37:44 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return (c += 32);
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c += 32);
+	return (c);
 }

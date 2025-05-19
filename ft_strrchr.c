@@ -6,32 +6,22 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:44:25 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:16:58 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:36:48 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlen(char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
+	int		i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
-char *ft_strrchr(char *str, char c)
-{
-    int i;
-
-    i = ft_strlen(str) - 1;
-    while (str[i])
-    {
-        if (c == str[i])
-            return (&str[i]);
-        i--;
-    }
-    return (0);
+	i = ft_strlen(s) - 1;
+	while (s[i])
+	{
+		if (c == s[i])
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (0);
 }

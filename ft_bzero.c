@@ -6,8 +6,17 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:32:48 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:25:06 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:24:36 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*s1;
+
+	s1 = (unsigned char *)s;
+	while (n--)
+		*s1++ = 0;
+}

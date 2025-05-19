@@ -6,13 +6,13 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:40:54 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/18 16:27:18 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:38:00 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        return (c -= 32);
-    return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c -= 32);
+	return (c);
 }
