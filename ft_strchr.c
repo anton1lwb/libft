@@ -6,20 +6,26 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:26:40 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/19 16:49:39 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:20:53 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *str, char c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	*s1;
 
 	i = 0;
-	while (str[i])
+	s1 = (char *)s;
+	while (s1[i] != '\0')
 	{
-		if (c == str[i])
-			return (&str[i]);
+		if (s1[i] == (unsigned char)c)
+			return (&s1[i]);
 		i++;
 	}
+	if (s1[i] == (unsigned char)c)
+		return (&s1[i]);
 	return (0);
 }

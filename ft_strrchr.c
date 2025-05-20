@@ -6,7 +6,7 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:44:25 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/19 15:36:48 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:25:29 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	size_t	i;
 
-	i = ft_strlen(s) - 1;
-	while (s[i])
+	i = ft_strlen(s);
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	while (i--)
 	{
-		if (c == s[i])
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
-		i--;
 	}
-	return (0);
+	return (NULL);
 }

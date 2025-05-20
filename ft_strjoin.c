@@ -6,72 +6,39 @@
 /*   By: anlowenb <anlowenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:43:32 by anlowenb          #+#    #+#             */
-/*   Updated: 2025/05/19 15:00:45 by anlowenb         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:34:55 by anlowenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	getsize(char const *s1)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	size_t	s1_len;
+	size_t	s2_len;
+	size_t	i;
+	char	*out;
 
+	if (!s1 || !s2)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
 	i = 0;
-	j = 0;
+	out = malloc(s1_len + s2_len + 1);
+	if (!out)
+		return (NULL);
 	while (s1[i])
 	{
-		if (s1[i] == ' ')
-			i++;
-		else
-		{
-			j++;
-			i++;
-		}
-	}
-	return (j);
-}
-
-int	getwords(char const *s1)
-{
-	int	i;
-	int	space;
-
-	i = 0;
-	space = 1;
-	while (s1[i])
-	{
-		if (ft_isalnum(s1[i - 1]) && s1[i] == ' ' && ft_isalnum(s1[i + 1]))
-			space++;
+		out[i] = s1[i];
 		i++;
 	}
-	return (space);
-}
-
-char	*ft_strjoin(const char *s1, const char *s2)
-{
-	int		i;
-	int		j;
-	int		k;
-	char	*str;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	str = malloc(sizeof(char) * (getsize(s1) + getwords(s1)));
-	while (s1[i])
+	while (s2[i - s1_len])
 	{
-		if (s1[i] == ' ')
-		{
-			while (s2[k])
-				str[j++] = s2[k++];
-			k = 0;
-			i++;
-		}
-		else
-			str[j++] = s1[i++];
+		out[i] = s2[i - s1_len];
+		i++;
 	}
-	return (str);
+	out[i] = '\0';
+	return (out);
 }
 // int	main(void)
 // {
